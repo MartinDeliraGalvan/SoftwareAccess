@@ -1,15 +1,15 @@
-
-<!--/*This will change to fit the JSP/MVC implementation*/-->
-
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<!DOCTYPE html>
 <html>
-
 <head>
-<link rel="stylesheet" type="text/css"
-	href="//fonts.googleapis.com/css?family=Michroma" />
-<link rel="stylesheet" type="text/css" href="../css/styles.css" />
-<link rel="stylesheet" type="text/css" href="../css/table.css" />
-<link rel="stylesheet" type="text/css" href="../css/searchBox.css" />
-<link rel="stylesheet" type="text/css" href="../css/paginationBlock.css" />
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Michroma" />
+
+<link rel='stylesheet' href='<c:url value="/resources/css/table.css" />' type='text/css' media='all' />
+<link rel='stylesheet' href='<c:url value="/resources/css/searchBox.css" />' type='text/css' media='all' />
+<link rel='stylesheet' href='<c:url value="/resources/css/paginationBlock.css" />' type='text/css' media='all' />
+<link rel='stylesheet' href='<c:url value="/resources/css/styles.css" />' type='text/css' media='all' />
+
+
 </head>
 <body>
 	<div id="mainWrapper">
@@ -22,9 +22,8 @@
 						Student Success</p>
 				</div>
 
-				<img id="AccessImage" src="../images/uteplogo.png" alt="Utep Logo"
-					style="width: 85px; height: 65px;">
-
+				
+				<img id="AccessImage" src="<c:url value='/resources/images/uteplogo.png'/>" alt="Utep Logo" style="width: 85px; height: 65px;">
 				<div id="UserAndButtonWrapper">
 					<p id="UserName">User:Username</p>
 					<button id="SignOutButton">Button</button>
@@ -42,10 +41,10 @@
                         var x = window.location.pathname;
                         document.write(x);
                         var currentLocation = window.location.pathname;
-                        if (currentLocation == "/SSI/resources.jsp") {
+                        if (currentLocation == "/resources.jsp") {
                         	$('#resources').css({background - color:black});
                         }
-                    </script>
+                </script>
 
 				<div id="sidenav">
 					<h2>Menu</h2>
@@ -72,10 +71,7 @@
 							<p id="resourcesWelcome" class="header14PBold">Welcome
 								USERNAME! here is your Projects and Initiative Lists</p>
 
-							<a href="search.jsp"> <img id="searchIcon"
-								src="../images/magnifying.png"
-								style="width: 30px; height: 35px;">
-							</a>
+							<a href="search.jsp"> <img id="searchIcon" src="<c:url value='/resources/images/magnifying.png'/>"	style="width: 30px; height: 35px;"></a>
 							<div id="serachBoxWrapper">
 								<input type="text" name="search" placeholder="Search..">
 							</div>

@@ -6,14 +6,14 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.AbstractController;
 
-public class LoginController extends AbstractController{
+public class ViewController extends AbstractController{
 
 	@Override
 	protected ModelAndView handleRequestInternal(HttpServletRequest request,
 		HttpServletResponse response) throws Exception {
 
-		ModelAndView model = new ModelAndView("login");
-
+		ModelAndView model = new ModelAndView("resources/resources");
+		
 		return model;
 	}
 }
