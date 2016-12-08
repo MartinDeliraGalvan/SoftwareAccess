@@ -1,4 +1,4 @@
-package net.viralpatel.spring.controller;
+package com.jjcom.spring.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,9 +12,5 @@ public class LoginController {
 	
 		return "login";
 	}
-
-	
-	
-	
 	
 }
