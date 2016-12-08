@@ -1,4 +1,4 @@
-package com.jjcom.usermanager;
+package com.jjcom.subsystem.authentication;
 
 /**/
 

@@ -1,4 +1,4 @@
-package com.jjcom.databsemanager;
+package com.jjcom.subsystem.database;
 import java.sql.*;
 
 
