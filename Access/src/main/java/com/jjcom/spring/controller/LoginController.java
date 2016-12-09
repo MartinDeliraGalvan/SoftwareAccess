@@ -6,7 +6,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.AbstractController;
 
-
+/*Redirects user to 'login,jsp' page*/
 public class LoginController extends AbstractController{
 		
 	@Override

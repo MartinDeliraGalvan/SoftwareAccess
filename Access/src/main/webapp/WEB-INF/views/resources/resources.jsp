@@ -25,8 +25,14 @@
 				
 				<img id="AccessImage" src="<c:url value='/resources/images/uteplogo.png'/>" alt="Utep Logo" style="width: 85px; height: 65px;">
 				<div id="UserAndButtonWrapper">
-					<p id="UserName">User:</p>
-					<button id="SignOutButton">Button</button>
+					<p id="UserName">User: John Smith</p>
+					
+					<form action="login.htm">
+					<button id="SignOutButton">Logout</button>
+					</form>
+					
+					
+					
 				</div>
 			</div>
 		</div>
@@ -69,7 +75,7 @@
 						<div id="ResourcesContainer">
 
 							<p id="resourcesWelcome" class="header14PBold">Welcome
-								USERNAME! here is your Projects and Initiative Lists</p>
+								John Smith here is your Projects and Initiative Lists</p>
 
 							<a href="search.jsp"> <img id="searchIcon" src="<c:url value='/resources/images/magnifying.png'/>"	style="width: 30px; height: 35px;"></a>
 							<div id="serachBoxWrapper">

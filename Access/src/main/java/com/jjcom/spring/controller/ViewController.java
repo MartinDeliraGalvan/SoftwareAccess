@@ -12,7 +12,8 @@ public class ViewController extends AbstractController{
 	protected ModelAndView handleRequestInternal(HttpServletRequest request,
 		HttpServletResponse response) throws Exception {
 
-		ModelAndView model = new ModelAndView("resources/resources");
+		
+		ModelAndView model = new ModelAndView("");
 		
 		return model;
 	}
