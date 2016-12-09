@@ -18,12 +18,15 @@
 	<div id="loginWrapper" class="centered">
 
 		<div id="LoginBox">
+		
+		
+			<form action="auth.htm">
 			<img id="uteplogo" src="<c:url value='/resources/images/uteplogo.png'/>" height="250px"	width="300px">
 			<p id="loginTitle">Welcome to the<br>Accelerating, Connecting and Evaluating Student Success<br>Application</p>
-			<input id="userInputTextBox" type="text" placeholder="Username or Email" size="25" class="loginInput"><br>
-			<input id="passwordInputTextBox" type="password" placeholder="Password" class="loginInput"><br>
-			<button id="loginButton" onclick="">Login</button>
-
+			<input id="userInputTextBox" type="text" placeholder="Username or Email" name="userName" size="25" class="loginInput"><br>
+			<input id="passwordInputTextBox" type="password" placeholder="Password" name="password" class="loginInput"><br>
+			<button id="loginButton" onclick="location.href='auth.htm'">Login</button>
+			</form>
 			<footer>
 				<p><br><br><br><br><br><br><br><br>
 					&copyACCESS Developed by JJCOM Team 3 <br> Created as a

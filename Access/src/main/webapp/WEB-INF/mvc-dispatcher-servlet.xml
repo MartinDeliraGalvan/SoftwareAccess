@@ -15,7 +15,10 @@
 			
 	<bean name="/resources.htm"
 		class="com.jjcom.spring.controller.ViewController" />
-			
+		
+	<bean name="/auth.htm"
+		class="com.jjcom.spring.controller.AuthController" />
+	
     <bean id="loginResolver"
     	class="org.springframework.web.servlet.view.InternalResourceViewResolver" >
         <property name="prefix">
