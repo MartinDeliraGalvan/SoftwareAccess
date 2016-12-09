@@ -1,26 +1,33 @@
 package com.jjcom.subsystem.resources;
 
+import java.util.ArrayList;
+
 public class Resource {
 
-	private String title;
-	private String description;
-	private String startdate;
-	private String enddate;
-	private String lastmodifyday;
-	private int resourceID;
-	private String type;
-	private String department;
-	private String college;
+	public String title;
+	public String ownerID;
+	public String description;
+	public String startdate;
+	public String enddate;
+	public String lastmodifyday;
+	public int resourceID;
+	public String type;
+	public String department;
+	public String college;
+	public ArrayList<String> keywordsList = new ArrayList<String>();
+	public ArrayList<Integer> documentList = new ArrayList<Integer>(); //contains a list with id of documents related to this project
 	
 	/**
 	 * default constructor
 	 */
 	public Resource(){
 		
-	}
+	}	
 
+	
 	public Resource(String title, String description, String startdate, String enddate, String lastmodifyday,
-		int resourceID, String type, String department, String college) {
+			int resourceID, String type, String department, String college, ArrayList<String> keywordsList,
+			ArrayList<Integer> documentList) {
 		super();
 		this.title = title;
 		this.description = description;
@@ -31,6 +38,8 @@ public class Resource {
 		this.type = type;
 		this.department = department;
 		this.college = college;
+		this.keywordsList = keywordsList;
+		this.documentList = documentList;
 	}
 
 	public String getTitle() {
@@ -112,8 +121,9 @@ public class Resource {
 				+ ", department=" + department + ", college=" + college + "]";
 	}
 	
-	
-	
+	public void setDocumentList(ArrayList<Integer> documentList) {
+		this.documentList = documentList;
+	}
 	
 	
 	

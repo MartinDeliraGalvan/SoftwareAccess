@@ -4,11 +4,12 @@ import java.util.ArrayList;
 
 public class Participant {
 
-	private int participantID;
-	private String name;
-	private String email;
-	private String role;
-	private ArrayList<Integer> memberOfactivity = new ArrayList<Integer>(); //stores activityIds where this user is a member
+	protected int participantID;
+	protected String name;
+	protected String email;
+	protected String role;
+	protected ArrayList<Integer> memberOfactivity = new ArrayList<Integer>(); //stores activityIds where this user is a member
+	
 	public Participant(int participantID, String name, String email, String role, ArrayList<Integer> memberOfactivity) {
 		super();
 		this.participantID = participantID;

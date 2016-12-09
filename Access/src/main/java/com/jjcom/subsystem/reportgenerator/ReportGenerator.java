@@ -4,7 +4,15 @@ import java.io.File;
 
 public class ReportGenerator {
 
-	File report;
+	/* Summary Report
+	 * Title: String
+	 * Description: String
+	 * Owner: String
+	 * Category: String
+	 * Creation Date: Date()
+	 * */
+	
+	
 	
 	
 	

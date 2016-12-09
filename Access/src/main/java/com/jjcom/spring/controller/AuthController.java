@@ -17,7 +17,7 @@ public class AuthController {
       if(userName == "mdelira") {
     	  message = "Welcome " +userName + ".";
     	  ModelAndView model = new ModelAndView("resources/resources");
-	      return new ModelAndView("resources/resourcesa", "message", message);  
+	      return new ModelAndView("resources/resources", "message", message);  
  
       }else{
     	  message = "Wrong username or password.";

@@ -3,31 +3,34 @@ package com.jjcom.subsystem.resources;
 import java.util.ArrayList;
 
 public class Initiative extends Resource {
-	private String category;
-	private String website;
-	private String puropse;
-	private String creationDate;
-	private ArrayList<Integer> activityList = new ArrayList<Integer>(); //contains a list with id of related initiatives
-	private ArrayList<Integer> documentList = new ArrayList<Integer>(); //contains a list with id of documents related to this project
-	
+	protected String category;
+	protected String website;
+	protected String puropse;
+	protected String creationDate;
+	protected ArrayList<Integer> activityList = new ArrayList<Integer>(); //contains a list with id of related initiatives
+	protected ArrayList<Integer> projectList = new ArrayList<Integer>(); //contains a list with id of related project
+	protected ArrayList<String> memberlist = new ArrayList<String>();//Stores member id
 	
 	public Initiative() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 	
 	/*Generates Initiative with both superclass constructor and setting this.fields*/
-	public Initiative(String title, String description, String startdate, String enddate, String lastmodifyday,
-		int resourceID, String type, String department, String college) {
-		super(title, description, startdate, enddate, lastmodifyday, resourceID, type, department, college);
+	
+	public String getCategory() {
+		return category;
+	}	
+
+	public Initiative(String category, String website, String puropse, String creationDate,
+			ArrayList<Integer> activityList, ArrayList<String> memberlist,ArrayList<Integer> projectList ) {
+		super();
 		this.category = category;
 		this.website = website;
 		this.puropse = puropse;
-		this.creationDate = creationDate;	
-	}
-
-	public String getCategory() {
-		return category;
+		this.creationDate = creationDate;
+		this.activityList = activityList;
+		this.memberlist = memberlist;
+		this.projectList = projectList;
 	}
 
 	public void setCategory(String category) {

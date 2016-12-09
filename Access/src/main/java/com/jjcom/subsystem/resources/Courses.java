@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Courses {
 
-	private ArrayList<String> courselist = new ArrayList<String>();
+	protected ArrayList<String> courselist = new ArrayList<String>();
 	
 	public Courses(){
 		this.courselist.add("CS1310");

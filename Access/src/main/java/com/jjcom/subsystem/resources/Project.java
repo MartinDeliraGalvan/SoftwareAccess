@@ -4,39 +4,27 @@ import java.util.ArrayList;
 
 public class Project extends Resource{
 
-	private int resourceID;
-	private String website;
-	private String objective;
-	private String goal;
-	private boolean funded;
-	private ArrayList<Integer> initiativeList = new ArrayList<Integer>(); //contains a list with id of related initiatives
-	private ArrayList<Integer> documentList = new ArrayList<Integer>(); //contains a list with id of documents related to this project
+	protected String website;
+	protected String objective;
+	protected String goal;
+	protected boolean funded;
+	protected ArrayList<Integer> initiativeList = new ArrayList<Integer>(); //contains a list with id of related initiatives
+	
 	
 	/*Default constructor*/
 	public Project(){
 		
-	}
+	}	
 
-	public Project(String title, String description, String startdate, String enddate, String lastmodifyday,
-			int resourceID, String type, String department, String college) {
-		
-		super(title, description, startdate, enddate, lastmodifyday, resourceID, type, department, college);
-		this.resourceID = resourceID;
+	public Project(String website, String objective, String goal, boolean funded, ArrayList<Integer> initiativeList,	ArrayList<Integer> documentList) {
+		super();
 		this.website = website;
 		this.objective = objective;
 		this.goal = goal;
 		this.funded = funded;
 		this.initiativeList = initiativeList;
-		
 	}
 
-	public int getResourceID() {
-		return resourceID;
-	}
-
-	public void setResourceID(int resourceID) {
-		this.resourceID = resourceID;
-	}
 
 	public String getWebsite() {
 		return website;
@@ -77,14 +65,10 @@ public class Project extends Resource{
 	public void setInitiativeList(ArrayList<Integer> initiativeList) {
 		this.initiativeList = initiativeList;
 	}
-	
-	/*adds initiative id to the initiative list of this project*/
-	public void addInitiativeToProject(Initiative initiative){
-		this.initiativeList.add(initiative.getResourceID());
+
+	public ArrayList<Integer> getDocumentList() {
+		return documentList;
 	}
+
 	
-	public void addDocumentToProject(Document document){
-		this.initiativeList.add(document.getDocumentId());
 	}
-		
-}

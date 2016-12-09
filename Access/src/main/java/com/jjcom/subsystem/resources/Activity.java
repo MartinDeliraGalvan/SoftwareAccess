@@ -4,15 +4,22 @@ import java.util.ArrayList;
 
 public class Activity extends Resource{
 
-	private String targetAudienceClassification;
-	private String classification;
-	private String semester;
-	private String targetAudienceDescription;
-	private ArrayList<Participant> participantList = new ArrayList<Participant>();/*Filled with participant objects*/
-	private ArrayList<String> courseList = new ArrayList<String>();
+	protected String targetAudienceClassification;
+	protected String classification;
+	protected String semester;
+	protected String targetAudienceDescription;
+	protected ArrayList<Participant> participantList = new ArrayList<Participant>();/*Filled with participant objects*/
+	protected ArrayList<String> courseList = new ArrayList<String>();
+	protected ArrayList<Integer> initiativeList = new ArrayList<Integer>();//Store ids of associated initiatives
+	
+	public Activity(){
+		
+	}
 	
 	
-	public Activity(String targetAudienceClassification, String classification, String semester, String targetAudienceDescription, ArrayList<Participant> participantList, ArrayList<String> courseList) {
+	public Activity(String targetAudienceClassification, String classification, String semester,
+			String targetAudienceDescription, ArrayList<Participant> participantList, ArrayList<String> courseList,
+			ArrayList<Integer> initiativeList) {
 		super();
 		this.targetAudienceClassification = targetAudienceClassification;
 		this.classification = classification;
@@ -20,6 +27,7 @@ public class Activity extends Resource{
 		this.targetAudienceDescription = targetAudienceDescription;
 		this.participantList = participantList;
 		this.courseList = courseList;
+		this.initiativeList = initiativeList;
 	}
 
 
@@ -81,6 +89,20 @@ public class Activity extends Resource{
 	public void setCourseList(ArrayList<String> courseList) {
 		this.courseList = courseList;
 	}
+
+
+	public ArrayList<Integer> getInitiativeList() {
+		return initiativeList;
+	}
+
+
+	public void setInitiativeList(ArrayList<Integer> initiativeList) {
+		this.initiativeList = initiativeList;
+	}
+	
+	
+	
+	
 	
 	
 	

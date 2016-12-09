@@ -25,7 +25,7 @@
 			<p id="loginTitle">Welcome to the<br>Accelerating, Connecting and Evaluating Student Success<br>Application</p>
 			<input id="userInputTextBox" type="text" placeholder="Username or Email" name="userName" size="25" class="loginInput"><br>
 			<input id="passwordInputTextBox" type="password" placeholder="Password" name="password" class="loginInput"><br>
-			<button id="loginButton" onclick="location.href='auth.htm'">Login</button>
+			<button id="loginButton">Login</button>
 			</form>
 			<footer>
 				<p><br><br><br><br><br><br><br><br>

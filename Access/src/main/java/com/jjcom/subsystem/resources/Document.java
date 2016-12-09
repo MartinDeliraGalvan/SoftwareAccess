@@ -2,10 +2,10 @@ package com.jjcom.subsystem.resources;
 
 public class Document {
 
-	private int documentId;
-	private String documentName;
-	private String format;
-	private String dateCreated;
+	protected int documentId;
+	protected String documentName;
+	protected String format;
+	protected String dateCreated;
 	
 	public Document(){
 		

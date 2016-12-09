@@ -7,8 +7,7 @@
 	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
 	http://www.springframework.org/schema/mvc
     http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd">
-	
-	
+		
 
     <bean name="/login.htm"
 		class="com.jjcom.spring.controller.LoginController" />
