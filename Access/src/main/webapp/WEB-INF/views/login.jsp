@@ -23,8 +23,8 @@
 			<form action="auth.htm">
 			<img id="uteplogo" src="<c:url value='/resources/images/uteplogo.png'/>" height="250px"	width="300px">
 			<p id="loginTitle">Welcome to the<br>Accelerating, Connecting and Evaluating Student Success<br>Application</p>
-			<input id="userInputTextBox" type="text" placeholder="Username or Email" name="userName" size="25" class="loginInput"><br>
-			<input id="passwordInputTextBox" type="password" placeholder="Password" name="password" class="loginInput"><br>
+			<input id="username" type="text" placeholder="Username or Email" name="username" size="25" class="loginInput"><br>
+			<input id="password" type="password" placeholder="Password" name="password" class="loginInput"><br>
 			<button id="loginButton">Login</button>
 			</form>
 			<footer>

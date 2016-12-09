@@ -2,27 +2,27 @@ package com.jjcom.spring.controller;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
- 
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
+
 import org.springframework.web.servlet.ModelAndView;
- 
-@Controller
-public class AuthController {
-   @RequestMapping("resources/resources")  
-   public ModelAndView login(HttpServletRequest request, HttpServletResponse response) {
-	  String userName=request.getParameter("userName");  
-      String password=request.getParameter("password");
-      String message;
-      if(userName == "mdelira") {
-    	  message = "Welcome " +userName + ".";
-    	  ModelAndView model = new ModelAndView("resources/resources");
-	      return new ModelAndView("resources/resources", "message", message);  
- 
-      }else{
-    	  message = "Wrong username or password.";
-    	  return new ModelAndView("errorPage", 
-    			  "message", message);
-      }
-   }
+import org.springframework.web.servlet.mvc.AbstractController;
+
+public class AuthController extends AbstractController {
+
+	@Override
+	protected ModelAndView handleRequestInternal(HttpServletRequest request, HttpServletResponse response)
+			throws Exception {
+
+		String username = request.getParameter("username");
+		String password = request.getParameter("password");
+		ModelAndView model;
+				
+		if (username.equals("mdelira") && password.equals("lv223")) {
+		 model = new ModelAndView("resources/resources?name=Martin Delira");
+		}
+		else{
+			model = new ModelAndView("login");
+		}
+					
+		return model;
+	}
 }

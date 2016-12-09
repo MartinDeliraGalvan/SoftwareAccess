@@ -25,7 +25,7 @@
 				
 				<img id="AccessImage" src="<c:url value='/resources/images/uteplogo.png'/>" alt="Utep Logo" style="width: 85px; height: 65px;">
 				<div id="UserAndButtonWrapper">
-					<p id="UserName">User:Username</p>
+					<p id="UserName">User:</p>
 					<button id="SignOutButton">Button</button>
 				</div>
 			</div>
