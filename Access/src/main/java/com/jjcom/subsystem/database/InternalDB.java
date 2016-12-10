@@ -1,61 +1,70 @@
 package com.jjcom.subsystem.database;
 
 import java.sql.*;
+import java.sql.ResultSet;
+import java.sql.Connection;
+import java.sql.SQLException;
+
 
 
 public class InternalDB {
-	// JDBC driver name and database URL
-	static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
-	static final String DB_URL = "jdbc:mysql://localhost/access";
+	
+	//public static void main(String []args){
+  public static boolean authenticate(String userlogin, String passwordlogin ) {
 
-	// Database credentials
-	static final String USER = "root";
-	static final String PASS = "";
+	System.out.println("-------- MySQL JDBC Connection Testing ------------");
 
-	public ResultSet authenticate(String user, String password) {
-		Connection conn = null;
-		Statement stmt = null;
-		try {
-			// STEP 2: Register JDBC driver
-			Class.forName("com.mysql.jdbc.Driver");
+	try {
+		Class.forName("com.mysql.jdbc.Driver");
+	} catch (ClassNotFoundException e) {
+		System.out.println("Where is your MySQL JDBC Driver?");
+		e.printStackTrace();
+		
+	}
 
-			// STEP 3: Open a connection
-			System.out.println("Connecting to database...");
-			conn = DriverManager.getConnection(DB_URL, USER, PASS);
+	System.out.println("MySQL JDBC Driver Registered!");
+	Connection connection = null;
 
-			// STEP 4: Execute a query
-			System.out.println("Creating statement...");
-			stmt = conn.createStatement();
-			String sql;
-			sql = "SELECT * FROM user";
-			ResultSet rs = stmt.executeQuery(sql);
-			
-			// STEP 6: Clean-up environment
-			
-			stmt.close();
-			conn.close();
-			rs.close();
-			return rs;
-		} catch (SQLException se) {
-			// Handle errors for JDBC
-			se.printStackTrace();
-		} catch (Exception e) {
-			// Handle errors for Class.forName
-			e.printStackTrace();
-		} finally {
-			// finally block used to close resources
-			try {
-				if (stmt != null)
-					stmt.close();
-			} catch (SQLException se2) {
-			} // nothing we can do
-			try {
-				if (conn != null)
-					conn.close();
-			} catch (SQLException se) {
-				se.printStackTrace();
-			} // end finally try
-		} // end try
-		return null;
-	}// end main
-}// end FirstExample
+	try {
+		connection = DriverManager
+		.getConnection("jdbc:mysql://127.0.0.1/access","root", "");
+		String query = "SELECT * FROM user";
+		Statement stmt = connection.createStatement();
+		ResultSet rs = stmt.executeQuery(query);
+		
+		 while(rs.next()){
+	         //Retrieve by column name
+	        
+	         String username = rs.getString("username");
+	         String first = rs.getString("firstname");
+	         String last = rs.getString("lastname");
+	         String password = rs.getString("password");
+	        		 
+
+	         //Display values
+	         System.out.println("Username: " + username);
+	         System.out.println("First: " + first);
+	         System.out.println("Last: " + last);
+	         System.out.println("\n\n");
+	         
+//	         if(username == userlogin && password == passwordlogin){
+//	        	 return true;
+//	         }
+	         
+	      }
+
+	} catch (SQLException e) {
+		System.out.println("Connection Failed! Check output console");
+		e.printStackTrace();
+		
+	}
+
+	if (connection != null) {
+		System.out.println("You made it, take control your database now!");
+	} else {
+		System.out.println("Failed to make connection!");
+	}
+	return false;
+	
+  }
+}

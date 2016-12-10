@@ -1,20 +1,24 @@
-
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<!DOCTYPE html>
 <!--/*This will change to fit the JSP/MVC implementation*/-->
-<?php
-include_once '../collaborations.php';
-$username = "John Doe";
-$buttonState = "Sign off";
-?>
+
 <html>
 
     <head>
         <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Michroma" />
-        <link rel="stylesheet" type="text/css" href="../css/styles.css"/>
-        <link rel="stylesheet" type="text/css" href="../css/resourcesDetailedViewStyles.css"/>
-        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-        <link rel="stylesheet" type="text/css" href="../css/jquery.datepick.css"> 
-        <script type="text/javascript" src="../js/jquery.plugin.js"></script> 
-        <script type="text/javascript" src="../js/jquery.datepick.js"></script>
+        <link rel='stylesheet' href='<c:url value="/resources/css/styles.css" />' type='text/css' media='all' />
+        <link rel='stylesheet' href='<c:url value="/resources/css/resourcesDetailedViewStyles.css" />' type='text/css' media='all' />
+		<link rel="stylesheet" href='<c:url  value="/resouces/css/jquery.datepick.css" />'  type="text/css"/>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script type="text/javascript" href='<c:url value="resources/js/jquery.plugin.js" />'></script>
+        
+	         
+      
+		
+		<link rel='stylesheet' href='<c:url value="/resources/css/paginationBlock.css" />' type='text/css' media='all' />
+		
+        
 
         <script>
             $(function () {
@@ -35,11 +39,15 @@ $buttonState = "Sign off";
                 <div id="HeaderInner">
                     <div id="HeaderTextWrapper"><p id="HeaderText">Accelerating, Connecting and Evaluating Student Success</p></div>
 
-                    <img id="AccessImage" src="../images/uteplogo.png" alt="Utep Logo" style="width:85px;height:65px;">
+                  <img id="AccessImage" src="<c:url value='/resources/images/uteplogo.png'/>" alt="Utep Logo" style="width: 85px; height: 65px;">
 
                     <div id="UserAndButtonWrapper">
-                        <p id="UserName"> User:<?php echo "  " . $username ?></p>
-                        <button id="SignOutButton"> <?php echo $buttonState ?> </button>
+                        <p id="UserName"> User: John Smith</p>
+                        
+                       <form action="login.htm">
+					<button id="SignOutButton">Logout</button>
+					</form>
+                        
                     </div>
                 </div>
             </div>
@@ -54,7 +62,7 @@ $buttonState = "Sign off";
                         var x = window.location.pathname;
                         document.write(x);
                         var currentLocation = window.location.pathname;
-                        if (currentLocation == "/SSI/resources.php") {
+                        if (currentLocation == "/projectdetailedview.htm") {
                             $('#resources').css({background - color:black});
                         }
                     </script>
@@ -64,13 +72,13 @@ $buttonState = "Sign off";
                         <ul>
                             <!--Runs a JavaScript function to set the sidenav state
                             depending on the current URL-->
-                            <li id="resources"><a href="../resources/resources.php">My Resources</a></li>
+                            <li id="resources"><a href="/resources.htm">My Resources</a></li>
                             <ul id="subNav" style="margin-left: 80px;">
-                                <li id="fundedProjectsView"><a href="../resources/fundedProjectsView.php">Funded Projects</a></li>
+                                <li id="fundedProjectsView"><a href=/fundedProjectsView.htm">Funded Projects</a></li>
                             </ul>
 
-                            <li id="directory"><a href="../directory/directory.php">Directory</a></li>
-                            <li id="analysis"><a href="../analysis/analysis.php">Analysis</a></li>
+                            <li id="directory"><a href="/directory.htm">Directory</a></li>
+                            <li id="analysis"><a href="/analysis.htm">Analysis</a></li>
                         </ul>
                     </div>
 
@@ -98,27 +106,31 @@ $buttonState = "Sign off";
                                     </div>
 
                                     <p id="PITitleLabel" class="PIlabels">*Tittle</p>
-                                    <p id="PIDescription" class="PIlabels">*Description</p>
+                                    <p id="PIDescription" class="PIlabels">Description</p>
                                     <p id="PIGoals" class="PIlabels">Goal(s)</p>
                                     <p id="PIDocType" class="PIlabels">Document Type</p>
                                     <p id="PIWebsite" class="PIlabels">Website</p>
                                     <p id="PIStartDate" class="PIlabels">*Start Date</p>
-                                    <p id="PIEndDate" class="PIlabels">*End Date</p>
+                                    <p id="PIEndDate" class="PIlabels">End Date</p>
                                     <p id="PIKeywords" class="PIlabels">Keywords</p>
                                     <p id="PIObjective" class="PIlabels">Objective(s)</p>
 
-                                    <input type="text" id="PITitleText" placeholder="Title" class="PDVText">
-                                    <input type="text" id="StartDateText" placeholder= "Start Date" class="PDVText">
-                                    <input type="text" id="EndDateText" placeholder= "End Date" class="PDVText">
-                                    <input type="text" id="PIDescText" placeholder="Description" class="PDVText">
-                                    <input type="text" id="PIGoalsText" placeholder="Goals" class="PDVText">
+                                    <input type="text" id="PITitleText" placeholder="Title" value="Fungal Loop Investigation Project" class="PDVText">
+                                    <input type="text" id="StartDateText" placeholder= "Start Date" value="2015-25-11" class="PDVText">
+                                    <input type="text" id="EndDateText" placeholder= "End Date" value="2018-xx-xx" class="PDVText">
+                                    <input type="text" id="PIDescText" placeholder="Description" class="PDVText" value="Investiagation about the reproduction and relation of fungus in desertic locations">
+                                    <input type="text" id="PIGoalsText" placeholder="Goals" class="PDVText" value="Find Research about fungal symbiotic relations">
                                     <input type="text" id="PIKeywordsText" placeholder="Keywords" class="PDVText">
                                     <select id="documentTypeSelector" >
                                         <option>Type</option>
+                                        <option>Data</option>
+                                        <option>Evaluation Report</option>
+                                        <option>Anual Report</option>
+                                        <option>Other</option>
                                     </select>
-                                    <input type="text" id="documentTypeAttachment" placeholder="Attachment/Link" class="PDVText">
+                                    <input type="text" id="documentTypeAttachment" placeholder="Attachment/Link" class="PDVText" value="Abstract.pdf" href="https://www.dropbox.com/s/4i4f56po5zzmh2l/dummypdf.pdf?dl=0">
                                     <input type="text" id="ObjectiveText" placeholder= "Objective" class="PDVText">
-                                    <input type="text" id="WebsiteText" placeholder= "Website" class="PDVText">
+                                    <input type="text" id="WebsiteText" placeholder= "Website" class="PDVText" value="www.science.utep.edu/investiations/fungal_loop">
                                     <img src="../images/plusIcon.png" class="plusIcon" id="PlusIcon1" onclick="alert('Choose a Keyword');" style="width:20px;height:20px;">
                                     <img src="../images/plusIcon.png" class="plusIcon" id="PlusIcon2" onclick="alert('Choose an Objective');"style="width:20px;height:20px;">
                                     <img src="../images/plusIcon.png" class="plusIcon" id="PlusIcon3" onclick="alert('Choose an Attachment');"style="width:20px;height:20px;">
@@ -150,22 +162,104 @@ $buttonState = "Sign off";
                                                 <th>Role</th>
                                                 <th>Action</th>
                                             </tr>
+                                            
+                                            
                                             <tr>
-                                                <td><input type="text" placeholder="Search by Name" value=""></td>
-                                                <td><input type="text" placeholder="Search by Email" value=""></td>
+                                                <td><input type="text" placeholder="Name" value="Mighel Herrera"></td>
+                                                <td><input type="text" placeholder="Email" value="mherrera@miners.utep.edu"></td>
                                                 <td id="cellSelector" >
                                                     <select id="roleSelector">
                                                         <option value="role">Role</option>
+                                                        <option value="role">Owner</option>
+                                                        <option value="role">PA</option>
+                                                        <option value="role" selected="true">IA</option>
                                                     </select>
                                                 </td>
                                                 <td>
-                                                    <img src="../images/xIcon.png" class="xIcon" id="xIcon" onclick="alert('Delete?');"style="width:20px;height:20px;">
+                                                    <img href='<c:url  value="resources/images/xIcon.png" />  class="xIcon" id="xIcon" onclick="alert('Delete?');"style="width:20px;height:20px;"/>
                                                 </td>
                                             </tr>
-                                        </tbody>
+                                            
+                                             <tr>
+                                                <td><input type="text" placeholder="Name" value="Michael Ellis"></td>
+                                                <td><input type="text" placeholder="Email" value="mellisa@miners.utep.edu"></td>
+                                                <td id="cellSelector" >
+                                                    <select id="roleSelector">
+                                                        <option value="role">Role</option>
+                                                        <option value="role">Owner</option>
+                                                        <option value="role" selected="true" >PA</option>
+                                                        <option value="role">IA</option>
+                                                    </select>
+                                                </td>
+                                             </tr>
+                                                 
+                                              <tr>
+                                                <td><input type="text" placeholder="Name" value="Josette Johnson"></td>
+                                                <td><input type="text" placeholder="Email" value="jjsona@miners.utep.edu"></td>
+                                                <td id="cellSelector" >
+                                                    <select id="roleSelector">
+                                                        <option value="role">Role</option>
+                                                        <option value="role">Owner</option>
+                                                        <option value="role">PA</option>
+                                                        <option value="role" selected="true">IA</option>
+                                                    </select>
+                                                </td>
+                                                <td>
+                                              </tr>
+                                              
+                                              <tr>
+                                                <td><input type="text" placeholder="Name" value="Josette Johnson"></td>
+                                                <td><input type="text" placeholder="Email" value="jjsona@miners.utep.edu"></td>
+                                                <td id="cellSelector" >
+                                                    <select id="roleSelector">
+                                                        <option value="role">Role</option>
+                                                        <option value="role" >Owner</option>
+                                                        <option value="role">PA</option>
+                                                        <option value="role" selected="true">IA</option>
+                                                    </select>
+                                                </td>
+                                                <td>
+                                              </tr>
+                                              
+                                              
+                                              <tr>
+                                                <td><input type="text" placeholder="Name" value="James Collins"></td>
+                                                <td><input type="text" placeholder="Email" value="jcollinsa@miners.utep.edu"></td>
+                                                <td id="cellSelector" >
+                                                    <select id="roleSelector">
+                                                        <option value="role">Role</option>
+                                                        <option value="role" selected="true">Owner</option>
+                                                        <option value="role" >PA</option>
+                                                        <option value="role">IA</option>
+                                                    </select>
+                                                </td>
+                                             </tr>
+                                             
+                                             
+                                             <tr>
+                                                <td><input type="text" placeholder="Name" value="Sarah Khalik"></td>
+                                                <td><input type="text" placeholder="Email" value="shkhal@miners.utep.edu"></td>
+                                                <td id="cellSelector" >
+                                                    <select id="roleSelector">
+                                                        <option value="role">Role</option>
+                                                        <option value="role">Owner</option>
+                                                        <option value="role" >PA</option>
+                                                        <option value="role"selected="true">IA</option>
+                                                    </select>
+                                                </td>
+                                             </tr>
+                                                
+                                                    <img href='<c:url  value="resources/images/xIcon.png" />  class="xIcon" id="xIcon" onclick="alert('Delete?');"style="width:20px;height:20px;"/>
+                                                </td>
+                                            </tr>
+                                                <td>
+                                                    <img href='<c:url  value="resources/images/xIcon.png" />  class="xIcon" id="xIcon" onclick="alert('Delete?');"style="width:20px;height:20px;"/>
+                                                </td>
+                                            </tr>
+                                            
                                     </table>
 
-                                    <button id="membershipButton">Add Membership</button>
+                                    <button id="membershipButton" style="margin-top:270px; margin-left: 15px; ">Add Membership</button>
 
                                 </div>
 
@@ -187,34 +281,27 @@ $buttonState = "Sign off";
                                                 <th>Owner</th>
                                             </tr>
                                             <tr>
-                                                <td><a href="initiativeDetailedView.php">Initiative Title 1</a> </td>
-                                                <td>Description 1</td>
-                                                <td>MM-DD-YYY</td>
+                                                <td><a href="initiativeDetailedView.php">Jornada Experimental Range Site</a> </td>
+                                                <td>Research project at Las Cruces</td>
+                                                <td>05-08-2015</td>
                                                 <td>No</td>
                                                 <td><a href="/somelink">Owner A</a></td>
                                             </tr>
 
                                             <tr>
-                                                <td><a href="initiativeDetailedView.php">Initiative Title 2</a> </td>
-                                                <td>Description 2</td>
-                                                <td>MM-DD-YYY</td>
+                                                <td><a href="initiativeDetailedView.php">Jornada Experimental Range Rain Simulator</a> </td>
+                                                <td>Simulation of Rain in the desert </td>
+                                                <td>05-08-2016</td>
                                                 <td>Yes</td>
-                                                <td><a href="/somelink">Owner A</a></td>
+                                                <td><a href="/somelink">John Smith</a></td>
                                             </tr>
 
-                                            <tr>
-                                                <td><a href="initiativeDetailedView.php">Initiative Title 3</a> </td>
-                                                <td>Description 3</td>
-                                                <td>MM-DD-YYY</td>
-                                                <td>No</td>
-                                                <td><a href="/somelink">Owner A</a></td>
-                                            </tr>
-
+                                           
                                         </tbody>
                                     </table>
 
-                                    <button id="InitiativeButton">Add Initiative</button>
-                                    <button id="LinkInitiativeButton"onclick="document.location = 'linkExistingInitiative.php'">Link Existing Initiative</button>
+                                    <button id="InitiativeButton" style="margin-top: 480px; margin-left: 15px;">Add Initiative</button>
+                                    <button id="LinkInitiativeButton" style="margin-top: 480px; margin-left: 200px;" onclick="document.location = 'linkExistingInitiative.php'">Link Existing Initiative</button>
 
                                 </div>
                                 <p id="requiredlabel">*Required Fields</p>

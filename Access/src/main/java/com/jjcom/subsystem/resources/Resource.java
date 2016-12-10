@@ -41,6 +41,11 @@ public class Resource {
 		this.keywordsList = keywordsList;
 		this.documentList = documentList;
 	}
+	
+	public void setOwnerId(String ownerid){
+		this.ownerID = ownerid;
+	}
+	
 
 	public String getTitle() {
 		return title;
@@ -125,7 +130,9 @@ public class Resource {
 		this.documentList = documentList;
 	}
 	
-	
+	public void addKeyword(String keyword){
+		this.keywordsList.add(keyword);
+	}
 	
 	
 }

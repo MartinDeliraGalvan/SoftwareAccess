@@ -3,11 +3,11 @@
 <html>
 <head>
 <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Michroma" />
-
-<link rel='stylesheet' href='<c:url value="/resources/css/table.css" />' type='text/css' media='all' />
+<link rel='stylesheet' href='<c:url value="/resources/css/table.css"/>' type='text/css' media='all' />
 <link rel='stylesheet' href='<c:url value="/resources/css/searchBox.css" />' type='text/css' media='all' />
 <link rel='stylesheet' href='<c:url value="/resources/css/paginationBlock.css" />' type='text/css' media='all' />
 <link rel='stylesheet' href='<c:url value="/resources/css/styles.css" />' type='text/css' media='all' />
+
 
 
 </head>
@@ -75,7 +75,7 @@
 						<div id="ResourcesContainer">
 
 							<p id="resourcesWelcome" class="header14PBold">Welcome
-								John Smith here is your Projects and Initiative Lists</p>
+								John Smith here is your Projects List</p>
 
 							<a href="search.jsp"> <img id="searchIcon" src="<c:url value='/resources/images/magnifying.png'/>"	style="width: 30px; height: 35px;"></a>
 							<div id="serachBoxWrapper">
@@ -91,29 +91,29 @@
 										<th>Last Modified Date</th>
 									</tr>
 									<tr>
-										<td><a href="projectDetailedView.jsp">Project Title 1
+										<td><a href="projectdetailedview.htm">Fungal Loop Investigation Project
 												<a>
 												<ul>
-													<a href="../login.jsp">Initiative A</a>
+													<a href="/initiative1.jsp">Jornada Experimental Range Site</a>
 													<br>
-													<a href="../login.jsp">Initiative B</a>
+													<a href="/initiative2.jsp">Jornada Experimental Range Rain Simulator</a>
 												</ul>
 										</td>
 										<td>Project</td>
 										<td>Owner</td>
-										<td>MM-DD-YYY</td>
+										<td>2016-12-05</td>
 									</tr>
 									<tr>
-										<td>Initiative Title 1</td>
-										<td>Initiative</td>
-										<td>IA</td>
-										<td>MM-DD-YYYY</td>
-									</tr>
-									<tr>
-										<td>Project Title 2</td>
+										<td><a href="/initiative3.jsp">Rotifier Bioogy Project</a></td>
 										<td>Project</td>
 										<td>PA</td>
-										<td>MM-DD-YYYY</td>
+										<td>2016-11-28</td>
+									</tr>
+									<tr>
+										<td><a href="/initiative4.jsp"> Research Initiative for Scientific Enhancement</a></td>
+										<td>Initiative</td>
+										<td>IA</td>
+										<td>2016-11-26</td>
 									</tr>
 
 								</table>

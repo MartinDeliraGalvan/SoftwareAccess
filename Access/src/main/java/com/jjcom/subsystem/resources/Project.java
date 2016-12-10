@@ -16,13 +16,12 @@ public class Project extends Resource{
 		
 	}	
 
-	public Project(String website, String objective, String goal, boolean funded, ArrayList<Integer> initiativeList,	ArrayList<Integer> documentList) {
+	public Project(String website, String objective, String goal, boolean funded) {
 		super();
 		this.website = website;
 		this.objective = objective;
 		this.goal = goal;
 		this.funded = funded;
-		this.initiativeList = initiativeList;
 	}
 
 
@@ -68,6 +67,12 @@ public class Project extends Resource{
 
 	public ArrayList<Integer> getDocumentList() {
 		return documentList;
+	}
+
+
+	public void addInitiative(int id) {
+		
+		this.initiativeList.add(id);
 	}
 
 	

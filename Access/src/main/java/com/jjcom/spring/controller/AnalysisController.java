@@ -2,19 +2,16 @@ package com.jjcom.spring.controller;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.AbstractController;
 
-public class ViewController extends AbstractController{
-
+/*Redirects user to 'login,jsp' page*/
+public class AnalysisController extends AbstractController{
+		
 	@Override
 	protected ModelAndView handleRequestInternal(HttpServletRequest request,
 		HttpServletResponse response) throws Exception {
-
-		
-		ModelAndView model = new ModelAndView("resouces");
-		
+		ModelAndView model = new ModelAndView("analysis/analysis");
 		return model;
 	}
 }

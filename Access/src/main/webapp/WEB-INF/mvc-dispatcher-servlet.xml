@@ -17,6 +17,20 @@
 		
 	<bean name="/auth.htm"
 		class="com.jjcom.spring.controller.AuthController" />
+		
+	<bean name="/projectdetailedview.htm"
+		class="com.jjcom.spring.controller.ProjectDetailedViewController" />
+		
+	<bean name="/fundedProjectsView.htm"
+		class="com.jjcom.spring.controller.FundedProjectsController" />
+		
+	<bean name="/directory.htm"
+		class="com.jjcom.spring.controller.DirectoryController" />
+	
+	<bean name="/analysis.htm"
+		class="com.jjcom.spring.controller.AnalysisController" />
+
+			
 	
     <bean id="loginResolver"
     	class="org.springframework.web.servlet.view.InternalResourceViewResolver" >

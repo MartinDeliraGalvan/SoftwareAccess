@@ -1,5 +1,7 @@
 package com.jjcom.subsystem.database;
+import java.awt.List;
 import java.sql.*;
+import com.jjcom.subsystem.database.*;
 
 
 public class DatabaseConnectionManager {
@@ -22,6 +24,12 @@ public class DatabaseConnectionManager {
 	
 	Connection con = null;
 	Statement stmt = null;
+	
+	
+
+	
+	
+	
 	
 	
 	

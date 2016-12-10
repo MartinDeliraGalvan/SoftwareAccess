@@ -39,7 +39,10 @@ $buttonState = "Sign off";
 
                     <div id="UserAndButtonWrapper">
                         <p id="UserName"> User:John Doe</p>
-                        <button id="SignOutButton"> Button </button>
+                        
+                       <form action="login.htm">
+						<button id="SignOutButton">Logout</button>
+					</form>
                     </div>
                 </div>
             </div>
@@ -86,7 +89,7 @@ $buttonState = "Sign off";
                                     <p id="fundedQuestion" style="margin-left: 265px" >No</p>
                                     
                                     <input id="YesRadio" type="radio" value="yes" name="funded">
-                                    <input id="NoRadio" type="radio" value="no" name="funded">
+                                    <input id="NoRadio" type="radio" value="no" name="funded" checked="true" >
 
                                     <div id="ProjectInformation" class="box">
                                         <div id="boxheaderP" class="boxheader">
